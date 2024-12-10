@@ -1,14 +1,18 @@
 {
-  "name": "isoplanner-mcp-server",
+  "name": "@ivarvd-hldng/isoplanner-mcp-server",
   "version": "0.1.0",
   "description": "MCP server implementation for ISOPlanner API integration",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "bin": {
+    "isoplanner-mcp-server": "./dist/index.js"
+  },
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "dev": "nodemon src/index.ts",
     "test": "jest",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/mcp-core": "^0.1.0",
