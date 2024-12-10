@@ -1,12 +1,12 @@
-// ISOPlanner API Types
 export interface ISOPlannerConfig {
-  apiUrl: string;
   clientId: string;
-  clientSecret: string;
+  resource: string;
+  authUrl: string;
+  tokenUrl: string;
 }
 
 export interface AuthToken {
-  accessToken: string;
-  refreshToken: string;
-  expiresIn: number;
+  access_token: string;
+  expires_in: number;
+  token_type: string;
 }
