@@ -3,7 +3,7 @@ import { ISOPlannerConfig } from '../types/isoplanner';
 
 export class ISOPlannerClient {
   private config: ISOPlannerConfig;
-  private axios: any;
+  public axios: any;
 
   constructor(config: ISOPlannerConfig) {
     this.config = config;
@@ -15,33 +15,6 @@ export class ISOPlannerClient {
     });
   }
 
-  // Asset Management
-  async getAssets() {
-    const response = await this.axios.get('/bi/v1/assets');
-    return response.data;
-  }
-
-  async getAssetTags() {
-    const response = await this.axios.get('/bi/v1/assets/tags');
-    return response.data;
-  }
-
-  async getAssetRisks() {
-    const response = await this.axios.get('/bi/v1/assets/risks');
-    return response.data;
-  }
-
-  // Task Management
-  async getTasks() {
-    const response = await this.axios.get('/bi/v1/tasks');
-    return response.data;
-  }
-
-  async getTaskTags() {
-    const response = await this.axios.get('/bi/v1/tasks/tags');
-    return response.data;
-  }
-
   // Risk Management
   async getRisks() {
     const response = await this.axios.get('/bi/v1/risks');
@@ -50,6 +23,21 @@ export class ISOPlannerClient {
 
   async getRiskTags() {
     const response = await this.axios.get('/bi/v1/risks/tags');
+    return response.data;
+  }
+
+  async getRiskControls() {
+    const response = await this.axios.get('/bi/v1/risks/controls');
+    return response.data;
+  }
+
+  async getRiskObjectives() {
+    const response = await this.axios.get('/bi/v1/risks/objectives');
+    return response.data;
+  }
+
+  async getRiskProcesses() {
+    const response = await this.axios.get('/bi/v1/risks/processes');
     return response.data;
   }
 }
